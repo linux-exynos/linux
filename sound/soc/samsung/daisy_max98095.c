@@ -564,13 +564,15 @@ out1:
 
 static int daisy_resume_post(struct snd_soc_card *card)
 {
-	/*
-	if (gpio_is_valid(daisy_mic_jack_gpio.gpio))
-		snd_soc_jack_gpio_detect(&daisy_mic_jack_gpio);
+	if (gpio_is_valid(daisy_mic_jack_gpio.gpio)) {
+		snd_soc_jack_free_gpios(&daisy_mic_jack, 1, &daisy_mic_jack_gpio);
+		snd_soc_jack_add_gpios(&daisy_mic_jack, 1, &daisy_mic_jack_gpio);
+	}
 
-	if (gpio_is_valid(daisy_hp_jack_gpio.gpio))
-		snd_soc_jack_gpio_detect(&daisy_hp_jack_gpio);
-	*/
+	if (gpio_is_valid(daisy_hp_jack_gpio.gpio)) {
+		snd_soc_jack_free_gpios(&daisy_hp_jack, 1, &daisy_hp_jack_gpio);
+		snd_soc_jack_add_gpios(&daisy_hp_jack, 1, &daisy_hp_jack_gpio);
+	}
 
 	return 0;
 }
