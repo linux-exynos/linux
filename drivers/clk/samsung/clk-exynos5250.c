@@ -234,7 +234,7 @@ static struct samsung_mux_clock exynos5250_mux_clks[] __initdata = {
 	MUX(0, "mout_aclk333", mout_aclk166_p, SRC_TOP0, 16, 1),
 
 	MUX(0, "mout_cpll", mout_cpll_p, SRC_TOP2, 8, 1),
-	MUX(0, "mout_epll", mout_epll_p, SRC_TOP2, 12, 1),
+	MUX(CLK_MOUT_EPLL, "mout_epll", mout_epll_p, SRC_TOP2, 12, 1),
 	MUX(0, "mout_vpll", mout_vpll_p, SRC_TOP2, 16, 1),
 	MUX(0, "mout_mpll_user", mout_mpll_user_p, SRC_TOP2, 20, 1),
 	MUX(0, "mout_bpll_user", mout_bpll_user_p, SRC_TOP2, 24, 1),
@@ -254,7 +254,7 @@ static struct samsung_mux_clock exynos5250_mux_clks[] __initdata = {
 	MUX(0, "mout_dp", mout_group1_p, SRC_DISP1_0, 16, 4),
 	MUX(CLK_MOUT_HDMI, "mout_hdmi", mout_hdmi_p, SRC_DISP1_0, 20, 1),
 
-	MUX(0, "mout_audio0", mout_audio0_p, SRC_MAU, 0, 4),
+	MUX(CLK_MOUT_AUDIO0, "mout_audio0", mout_audio0_p, SRC_MAU, 0, 4),
 
 	MUX(0, "mout_mmc0", mout_group1_p, SRC_FSYS, 0, 4),
 	MUX(0, "mout_mmc1", mout_group1_p, SRC_FSYS, 4, 4),

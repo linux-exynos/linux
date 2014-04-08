@@ -153,8 +153,10 @@
 
 /* mux clocks */
 #define CLK_MOUT_HDMI		1024
+#define CLK_MOUT_EPLL		1025
+#define CLK_MOUT_AUDIO0		1026
 
 /* must be greater than maximal clock id */
-#define CLK_NR_CLKS		1025
+#define CLK_NR_CLKS		1027
 
 #endif /* _DT_BINDINGS_CLOCK_EXYNOS_5250_H */
