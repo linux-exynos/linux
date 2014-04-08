@@ -21,6 +21,7 @@
 #include <linux/of.h>
 #include <linux/platform_device.h>
 #include <linux/clk.h>
+#include <linux/gpio.h>
 #include <linux/io.h>
 #include <linux/of_gpio.h>
 #include <linux/of.h>
@@ -33,8 +34,8 @@
 #include <sound/jack.h>
 #include <sound/max98095.h>
 
-#include <mach/regs-clock.h>
-#include <mach/gpio.h>
+/*#include <mach/regs-clock.h>
+#include <mach/gpio.h>*/
 
 #include "i2s.h"
 #include "s3c-i2s-v2.h"
@@ -563,11 +564,13 @@ out1:
 
 static int daisy_resume_post(struct snd_soc_card *card)
 {
+	/*
 	if (gpio_is_valid(daisy_mic_jack_gpio.gpio))
 		snd_soc_jack_gpio_detect(&daisy_mic_jack_gpio);
 
 	if (gpio_is_valid(daisy_hp_jack_gpio.gpio))
 		snd_soc_jack_gpio_detect(&daisy_hp_jack_gpio);
+	*/
 
 	return 0;
 }

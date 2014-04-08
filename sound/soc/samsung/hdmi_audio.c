@@ -584,8 +584,7 @@ static int hdmi_audio_probe(struct platform_device *pdev)
 	}
 
 	/* create workqueue and hotplug work */
-	ctx->hpd_wq = alloc_workqueue("exynos-hdmi-audio",
-			WQ_UNBOUND | WQ_NON_REENTRANT, 1);
+	ctx->hpd_wq = alloc_workqueue("exynos-hdmi-audio", WQ_UNBOUND, 1);
 	if (ctx->hpd_wq == NULL) {
 		dev_err(&pdev->dev, "failed to create workqueue\n");
 		ret = -ENOMEM;
