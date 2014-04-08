@@ -43,6 +43,14 @@ config SND_SAMSUNG_SPDIF
 config SND_SAMSUNG_I2S
 	tristate
 
+config SND_SOC_SAMSUNG_HDMI_AUDIO
+	tristate "SoC I2S Audio support for HDMI Audio"
+	depends on SND_SOC_SAMSUNG
+	help
+	  Say Y if you have a Samsung Exynos (ARM) chipset with a HDMI port and want
+	  to connect HDMI devices, such as TVs which have audio output. This option
+	  enables the support for routing audio through the HDMI port.
+
 config SND_SOC_SAMSUNG_NEO1973_WM8753
 	tristate "Audio support for Openmoko Neo1973 Smartphones (GTA02)"
 	depends on SND_SOC_SAMSUNG && MACH_NEO1973_GTA02
@@ -192,6 +200,16 @@ config SND_SOC_SMDK_WM8994_PCM
 	select SND_SAMSUNG_PCM
 	help
 	  Say Y if you want to add support for SoC audio on the SMDK
+
+config SND_SOC_SAMSUNG_MAX98095
+	tristate "SoC I2S Audio support for Maxim MAX98089/90/95."
+	depends on SND_SOC_SAMSUNG
+	select SND_SAMSUNG_I2S
+	select SND_SOC_MAX98088
+	select SND_SOC_MAX98090
+	select SND_SOC_MAX98095
+	help
+	  Say Y if you want to add support for SoC audio for Maxim MAX98089/90/95 
 
 config SND_SOC_SPEYSIDE
 	tristate "Audio support for Wolfson Speyside"
